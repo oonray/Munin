@@ -1,0 +1,17 @@
+name: Create Munin Zip
+  on: [push]
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@master
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'munin.zip'
+          exclusions: '*.git*'
+
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "munin.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
