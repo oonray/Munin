@@ -1,6 +1,6 @@
 name: Create Munin Zip
-  on: [push]
-  jobs:
+on: [push]
+jobs:
     build:
       runs-on: ubuntu-latest
       steps:
@@ -14,4 +14,4 @@ name: Create Munin Zip
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "munin.zip"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GIT_TOKEN }}
