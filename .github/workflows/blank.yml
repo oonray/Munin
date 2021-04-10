@@ -10,8 +10,4 @@ jobs:
         with:
           filename: 'munin.zip'
           exclusions: '*.git*'
-
-      - uses: ncipollo/release-action@v1
-        with:
-          artifacts: "munin.zip"
-          token: ${{ secrets.GIT_TOKEN }}
+          type: zip
