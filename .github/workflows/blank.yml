@@ -11,3 +11,11 @@ jobs:
           filename: 'munin.zip'
           exclusions: '*.git*'
           type: zip
+
+      - name: Upload Release
+        uses: ncipollo/release-action@v1
+        with:
+            name: Munin
+            tag: 1.1
+            artifacts: "munin.zip"
+            token: ${{ secrets.GITHUB_TOKEN }}
