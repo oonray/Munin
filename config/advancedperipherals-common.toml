@@ -32,7 +32,7 @@
 	#Enable the Chat Box or not.
 	enableChatBox = true
 	#Enable the Me Bridge or not.
-	enableMeBridge = true
+	enableMeBridge = false
 	#Enable the inventory manager or not.
 	enableInventoryManager = true
 
