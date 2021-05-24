@@ -8,4 +8,7 @@ debug = false
 	#Maximum length of the vent pipe for smoke or gas transmition
 	#Range: 1 ~ 64
 	maxVentPipeLength = 32
+	#Maximum amount of blocks that will be checked when searching for multiblock boundaries.
+	#Range: 1 ~ 512
+	maxBlocksInMultiblock = 81
 
