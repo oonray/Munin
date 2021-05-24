@@ -5,7 +5,13 @@
   "diamond_wand_limit": 49,
   "netherite_wand_limit": 81,
   "stone_wand_durability": 131,
-  "iron_wand__durability": 250,
-  "diamond_wand__durability": 1561,
-  "netherite_wand_durability": 2031
+  "iron_wand_durability": 250,
+  "diamond_wand_durability": 1561,
+  "netherite_wand_durability": 2031,
+  "destroy_in_survival_drop": true,
+  "str_allowed": [
+    "minecraft:soul_sand",
+    "minecraft:grass_path"
+  ],
+  "str_denied": []
 }
