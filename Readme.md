@@ -2,7 +2,7 @@
 
 A Minecraft modpack  
 **minecraft:** 1.16.5  
-**forge:** 36.0.45
+**forge:** 36.1.0
 
 ## Development Environment
 Clone the repo to an empty folder inside the curse client profile folder.
