@@ -1,0 +1,17 @@
+# client files
+saves/
+journeymap/
+logs/
+crash-reports/
+minecraftinstance.json
+realms_persistence.json
+usercache.json
+usernamecache.json
+options.txt
+optionsof.txt
+
+# don't know what these do, but haven't touched them. At least we don't need them version controlled just yet.
+.mixin.out/
+BotaniaVars.dat
+patchouli_data.json
+
