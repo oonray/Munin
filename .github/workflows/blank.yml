@@ -1,23 +1,25 @@
 name: Create Munin Zip
-on: 
+on:
   release:
     types: [published]
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@master
-        - name: Archive Release
-          uses: thedoctor0/zip-release@master
-          with:
-            filename: 'munin_${{ github.event.release.tag_name }}.zip'
-            exclusions: '*.git*'
-            type: zip
-
-        - name: Upload Release
-          uses: ncipollo/release-action@v1
-          with:
-              name: Munin
-              tag: ${{ github.event.release.tag_name }}
-              artifacts: "munin_${{ github.event.release.tag_name }}.zip"
-              token: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: thedoctor0/zip-release@master
+      with:
+        filename: 'munin_${{ github.event.release.tag_name }}.zip'
+        exclusions: '*.git*'
+        type: zip
+        
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./munin_${{ github.event.release.tag_name }}.zip
+        asset_name: munin_${{ github.event.release.tag_name }}.zip
+        asset_content_type: application/zip
