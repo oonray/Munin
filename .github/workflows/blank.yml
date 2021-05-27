@@ -1,5 +1,5 @@
 name: Create Munin Zip
-on: [push]
+on: [release]
 jobs:
     build:
       runs-on: ubuntu-latest
@@ -16,6 +16,6 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
             name: Munin
-            tag: 1.1
+            tag: ${{ github.event.release.tag_name }}
             artifacts: "munin.zip"
             token: ${{ secrets.GITHUB_TOKEN }}
