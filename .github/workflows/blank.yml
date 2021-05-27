@@ -8,7 +8,7 @@ jobs:
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
-          filename: 'munin.zip'
+          filename: 'munin_${{ github.event.release.tag_name }}.zip'
           exclusions: '*.git*'
           type: zip
 
@@ -17,5 +17,5 @@ jobs:
         with:
             name: Munin
             tag: ${{ github.event.release.tag_name }}
-            artifacts: "munin.zip"
+            artifacts: "munin_${{ github.event.release.tag_name }}.zip"
             token: ${{ secrets.GITHUB_TOKEN }}
