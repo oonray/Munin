@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: hello
+  name: dyndns
 spec:
   schedule: "*/10 * * * *"
   jobTemplate:
@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: dyndns
-            image: busybox
+            image: curlimages/curl
             imagePullPolicy: IfNotPresent
             command: 
             - | 
