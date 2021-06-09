@@ -20,12 +20,11 @@ spec:
           - name: dyndns
             image: golang
             command: 
-              - main.go
+              - go run main.go
  
             volumeMounts:
               - name: gofile
-                mountPath: main.go
-                subPath: main.go
+                mountPath: /main.go
 
             env:
               - name: TOKEN
