@@ -20,11 +20,11 @@ spec:
           - name: dyndns
             image: golang
             command: 
-              - go run /main.go 
-                
+              - go run /usr/share/main.go
+ 
             volumeMounts:
               - name: gofile
-                mountPath: /main.go
+                mountPath: /usr/share/main.go
                 subPath: main.go
 
             env:
