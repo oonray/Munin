@@ -20,11 +20,11 @@ spec:
           - name: dyndns
             image: golang
             command: 
-              - go run /usr/share/main.go
+              - go run main.go
  
             volumeMounts:
               - name: gofile
-                mountPath: /usr/share/main.go
+                mountPath: main.go
                 subPath: main.go
 
             env:
@@ -51,6 +51,4 @@ spec:
                   secretKeyRef:
                     name: dyndns
                     key: record
-
-                     
           restartPolicy: OnFailure
