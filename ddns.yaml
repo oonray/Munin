@@ -20,7 +20,7 @@ spec:
           - name: dyndns
             image: golang
             command: 
-              - go run main.go
+              - main.go
  
             volumeMounts:
               - name: gofile
