@@ -18,14 +18,7 @@ spec:
 
           containers:
           - name: dyndns
-            image: golang
-            command: 
-              - go run main.go
- 
-            volumeMounts:
-              - name: gofile
-                mountPath: /main.go
-
+            image: oonray/dyndns
             env:
               - name: TOKEN
                 valueFrom:
