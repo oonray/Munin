@@ -50,4 +50,5 @@ spec:
                   secretKeyRef:
                     name: dyndns
                     key: record
+                    
           restartPolicy: OnFailure
