@@ -8,14 +8,6 @@ spec:
     spec:
       template:
         spec:
-          volumes:
-            - name: gofile
-              configMap:
-                name: ddnsgo
-                items:
-                  - key: main.go
-                    path: main.go
-
           containers:
           - name: dyndns
             image: oonray/dyndns:latest
