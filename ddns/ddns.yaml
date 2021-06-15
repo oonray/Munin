@@ -11,7 +11,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: dyndns
-              image: oonray/dyndns:latest
+              image: oonray/ddns:latest
               env:
                 - name: TOKEN
                   valueFrom:
