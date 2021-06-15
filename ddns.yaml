@@ -18,7 +18,7 @@ spec:
 
           containers:
           - name: dyndns
-            image: oonray/dyndns
+            image: oonray/dyndns:latest
             env:
               - name: TOKEN
                 valueFrom:
