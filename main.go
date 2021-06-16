@@ -31,7 +31,7 @@ func main() {
 			fmt.Sprintf("https://api.dnsimple.com/v2/%s/zones/%s/record/%s",
 										os.Getenv("ACCOUNT_ID"),
 										os.Getenv("ZONE_ID"),
-										os.Getenv("RECORD_ID")l),
+										os.Getenv("RECORD_ID")),
 			"\n",
 			"",
 			-1
