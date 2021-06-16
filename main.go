@@ -32,11 +32,17 @@ func main() {
 	),
 		bytes.NewBuffer([]byte(fmt.Sprintf("{\"content\":\"%s\"}",data))),
 	)
+	if(err != nil){
+		logrus.Errorf("Could not create response %s",err)
+	}
 
 	req.Header.Add("Authorization",fmt.Sprintf("Bearer %s",os.Getenv("TOKEN")))
 	req.Header.Add("Content-Type","application/json")
 	req.Header.Add("Accept","application/json")
 	
 	client := &http.Client{}
-	client.Do(req)
+	err := client.Do(req)
+	if(err != nil){
+		logrus.Errorf("Could not send response %s",err)
+	}
 }
