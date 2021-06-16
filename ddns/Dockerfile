@@ -4,5 +4,6 @@ RUN mkdir -p /ddns
 WORKDIR /ddns
 COPY . .
 RUN go get github.com/sirupsen/logrus
+RUN go build  
 
-CMD ["ddns"]
+CMD ["./munin"]
