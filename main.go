@@ -17,11 +17,13 @@ func main() {
 	resp, err := http.Get(path)
 	if(err != nil){
 		logrus.Errorf("Could not fetch url %s",err)
+		return
 	}
 
   data, err := ioutil.ReadAll(resp.Body)
 	if(err != nil){
 		logrus.Errorf("Could not read response %s",err)
+		return
 	}
 
 	req, err := http.NewRequest("PATCH",
@@ -34,6 +36,7 @@ func main() {
 	)
 	if(err != nil){
 		logrus.Errorf("Could not create response %s",err)
+		return
 	}
 
 	req.Header.Add("Authorization",fmt.Sprintf("Bearer %s",os.Getenv("TOKEN")))
@@ -44,5 +47,6 @@ func main() {
 	err := client.Do(req)
 	if(err != nil){
 		logrus.Errorf("Could not send response %s",err)
+		return
 	}
 }
