@@ -31,9 +31,9 @@ func main() {
 										os.Getenv("ACCOUNT_ID"),
 										os.Getenv("ZONE_ID"),
 										os.Getenv("RECORD_ID"),
-	),
-		bytes.NewBuffer([]byte(fmt.Sprintf("{\"content\":\"%s\"}",data))),
-	)
+		),
+		bytes.NewBuffer([]byte(fmt.Sprintf("{\"content\":\"%s\"}",data))))
+
 	if(err != nil){
 		logrus.Errorf("Could not create response %s",err)
 		return
