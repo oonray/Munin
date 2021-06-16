@@ -44,7 +44,7 @@ func main() {
 	req.Header.Add("Accept","application/json")
 	
 	client := &http.Client{}
-	err = client.Do(req)
+	_, err = client.Do(req)
 	if(err != nil){
 		logrus.Errorf("Could not send response %s",err)
 		return
