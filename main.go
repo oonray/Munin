@@ -27,10 +27,14 @@ func main() {
 	}
 
 	req, err := http.NewRequest("PATCH",
-		fmt.Sprintf("https://api.dnsimple.com/v2/%s/zones/%s/record/%s",
+		strings.Replace(
+			fmt.Sprintf("https://api.dnsimple.com/v2/%s/zones/%s/record/%s",
 										os.Getenv("ACCOUNT_ID"),
 										os.Getenv("ZONE_ID"),
-										os.Getenv("RECORD_ID"),
+										os.Getenv("RECORD_ID")l),
+			"\n",
+			"",
+			-1
 		),
 		bytes.NewBuffer([]byte(fmt.Sprintf("{\"content\":\"%s\"}",data))))
 
