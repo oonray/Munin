@@ -34,7 +34,7 @@ func main() {
 										os.Getenv("RECORD_ID")),
 			"\n",
 			"",
-			-1
+			-1,
 		),
 		bytes.NewBuffer([]byte(fmt.Sprintf("{\"content\":\"%s\"}",data))))
 
