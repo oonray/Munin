@@ -42,7 +42,7 @@ func main() {
 		return
 	}
 
-	req.Header.Add("Authorization",fmt.Sprintf("Bearer %s",os.Getenv("TOKEN")))
+	req.Header.Add("Authorization",srings.Replace(fmt.Sprintf("Bearer %s",os.Getenv("TOKEN")),"\n","",-1))
 	req.Header.Add("Content-Type","application/json")
 	req.Header.Add("Accept","application/json")
 	
