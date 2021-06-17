@@ -34,8 +34,7 @@ func main() {
 	url_esc :=  strings.Replace("\n","",-1)
 
 	req, err := http.NewRequest("PATCH", url_esc,
-		bytes.NewBuffer([]byte(fmt.Sprintf("{\"content\":\"%s\"}",data)))
-	)
+		bytes.NewBuffer([]byte(fmt.Sprintf("{\"content\":\"%s\"}",data))))
 
 	if(err != nil){
 		logrus.Errorf("Could not create response %s",err)
