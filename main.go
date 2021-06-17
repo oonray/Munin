@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"strings"
 
 	"github.com/sirupsen/logrus"
 )
@@ -31,7 +32,7 @@ func main() {
 										os.Getenv("ZONE_ID"),
 										os.Getenv("RECORD_ID"))
 
-	url_esc :=  string.Replace("\n","",-1)
+	url_esc :=  strings.Replace("\n","",-1)
 
 	req, err := http.NewRequest("PATCH", url_esc,
 		bytes.NewBuffer([]byte(fmt.Sprintf("{\"content\":\"%s\"}",data))))
