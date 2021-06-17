@@ -26,17 +26,16 @@ func main() {
 		return
 	}
 
-	req, err := http.NewRequest("PATCH",
-		strings.Replace(
-			fmt.Sprintf("https://api.dnsimple.com/v2/%s/zones/%s/record/%s",
+  url := fmt.Sprintf("https://api.dnsimple.com/v2/%s/zones/%s/record/%s",
 										os.Getenv("ACCOUNT_ID"),
 										os.Getenv("ZONE_ID"),
-										os.Getenv("RECORD_ID")),
-			"\n",
-			"",
-			-1,
-		),
-		bytes.NewBuffer([]byte(fmt.Sprintf("{\"content\":\"%s\"}",data))))
+										os.Getenv("RECORD_ID"))
+
+	url_esc :=  strings.Replace("\n","",-1)
+
+	req, err := http.NewRequest("PATCH", url_esc,
+		bytes.NewBuffer([]byte(fmt.Sprintf("{\"content\":\"%s\"}",data)))
+	)
 
 	if(err != nil){
 		logrus.Errorf("Could not create response %s",err)
