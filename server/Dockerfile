@@ -12,4 +12,6 @@ WORKDIR /MC/Munin
 RUN ls -lah
 RUN java -jar bin/modpack.jar --installServer
 
+CMD ["java", "-Xmx1024M", "-Xms1024M", "-jar", "minecraft_server.1.16.5.jar", "nogui"]
+
 
