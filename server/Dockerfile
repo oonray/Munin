@@ -9,6 +9,8 @@ RUN git clone https://github.com/oonray/Munin.git /MC/Munin
 
 WORKDIR /MC/Munin
 
+RUN echo "eula=true" >> eula.txt
+
 RUN ls -lah
 RUN java -jar bin/modpack.jar --installServer
 
