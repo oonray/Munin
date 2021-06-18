@@ -4,8 +4,8 @@ FROM ubuntu
 RUN mkdir /MC
 WORKDIR /MC
 
-RUN apt-get update
-RUN apt-get install git
+RUN apt-get -y update
+RUN apt-get -y install git
 
 RUN git clone git@github.com:oonray/Munin.git
 WORKDIR Munin
