@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: minecraft
+    labels:
+      app: minecraft
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: minecraft
+    template:
+        metadata:
+            labels:
+                app: minecraft
+        spec:
+            dnsConfig:
+              nameservers:
+                - 192.168.10.164
+            volumes:
+              - name: world
+                hostPath:
+                  path: /disk2/Minecraft/server/world
+                  type: Directory
+
+            containers:
+                - name: minecraft
+                  image: oonray/munin:latest
+
+                  volumeMounts:
+                    - name: world
+                      mountPath: /MC/Munin/world
+                  ports:
+                    - containerPort: 25565
