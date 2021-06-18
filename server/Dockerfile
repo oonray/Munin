@@ -9,8 +9,9 @@ RUN apt-get -y install git
 RUN git clone https://github.com/oonray/Munin.git
 
 FROM openjdk
-
 WORKDIR Munin
+
+RUN ls -lah
 RUN java -jar bin/modpack.jar --installServer
 
 
