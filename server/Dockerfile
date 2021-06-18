@@ -13,7 +13,8 @@ RUN echo "eula=true" >> eula.txt
 
 RUN ls -lah
 RUN java -jar bin/modpack.jar --installServer
+RUN mv `find -name minecraft_server.*.jar` server.jar
 
-CMD ["java", "-Xmx1024M", "-Xms1024M", "-jar", "minecraft_server.*.jar", "nogui"]
+CMD ["java", "-Xmx1024M", "-Xms1024M", "-jar", "server.jar", "nogui"]
 
 
