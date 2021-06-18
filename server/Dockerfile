@@ -2,8 +2,8 @@ FROM openjdk:8-jre-alpine
 
 RUN mkdir /MC
 
-RUN apk -y update
-RUN apk -y install git
+RUN apk update
+RUN apk add git
 
 RUN git clone https://github.com/oonray/Munin.git /MC/Munin
 
