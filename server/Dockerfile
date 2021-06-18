@@ -1,4 +1,5 @@
 FROM openjdk
+FROM ubuntu
 
 RUN mkdir /MC
 WORKDIR /MC
