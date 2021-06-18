@@ -8,7 +8,9 @@ RUN apt-get -y install git
 
 RUN git clone https://github.com/oonray/Munin.git
 
+RUN ls -lah
 FROM openjdk
+RUN ls -lah
 WORKDIR Munin
 
 RUN ls -lah
