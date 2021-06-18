@@ -1,9 +1,9 @@
-FROM openjdk:8-jre-debian
+FROM openjdk:8-jre-alpine
 
 RUN mkdir /MC
 
-RUN apt-get -y update
-RUN apt-get -y install git
+RUN apk -y update
+RUN apk -y install git
 
 RUN git clone https://github.com/oonray/Munin.git /MC/Munin
 
