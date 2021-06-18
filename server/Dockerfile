@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/java/jdk
+FROM openjdk
 
 RUN mkdir /MC
 WORKDIR /MC
