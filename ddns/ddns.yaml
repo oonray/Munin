@@ -1,22 +1,13 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: CronJob
 metadata:
-    name: ddns
-    labels:
-      app: ddns
+  name: dyndns
 spec:
-    replicas: 1
-    selector:
-        matchLabels:
-            app: ddns
-    template:
-        metadata:
-            labels:
-                app: ddns
+  schedule: "*/10 * * * *"
+  jobTemplate:
+    spec:
+      template:
         spec:
-          dnsConfig:
-              nameservers:
-                - 192.168.10.164
           restartPolicy: OnFailure
           containers:
             - name: dyndns
